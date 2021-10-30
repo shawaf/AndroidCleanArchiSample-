@@ -14,7 +14,11 @@ object Versions {
     //DI
     const val hilt="2.38.1"
     const val hilt_x="1.0.0-alpha03"
-
+    //Networking
+    const val retrofit = "2.9.0"
+    const val moshi = "1.11.0"
+    const val okhttp = "4.9.1"
+    const val retrofit2_version = "2.6.0"
 
 
 }

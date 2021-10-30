@@ -25,6 +25,15 @@ object Dependencies {
     const val daggerHiltAndXCompiler="androidx.hilt:hilt-compiler:${Versions.hilt_x}"
     const val lifecycle_hilt_viewmodel="androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_x}"
 
+    /**
+     * Networking
+     */
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit2_version}"
+    const val retrofit_rxjavaAdapter = "com.squareup.retrofit2:adapter-rxjava3:${Versions.retrofit}"
+    const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
 
     /**
      * Testing
