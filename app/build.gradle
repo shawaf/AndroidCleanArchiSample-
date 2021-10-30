@@ -2,6 +2,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 
 }
 
@@ -35,14 +36,14 @@ android {
 
 dependencies {
 
-    implementation Dependencies.Deps.kotlinKtx
-    implementation Dependencies.Deps.appCompat
-    implementation Dependencies.Deps.materialDesign
-    implementation Dependencies.Deps.constraintLayout
+    implementation Dependencies.kotlinKtx
+    implementation Dependencies.appCompat
+    implementation Dependencies.materialDesign
+    implementation Dependencies.constraintLayout
 
 
     //Testing
-    testImplementation Dependencies.Deps.junit
-    androidTestImplementation Dependencies.Deps.junitExt
-    androidTestImplementation Dependencies.Deps.espresso
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.junitExt
+    androidTestImplementation Dependencies.espresso
 }
