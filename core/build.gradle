@@ -1,21 +1,19 @@
-
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-
 }
 
 android {
     compileSdk ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.elshawaf.androidcleanarchsample"
         minSdk ConfigData.minSdkVersion
         targetSdk ConfigData.targetSdkVersion
         versionCode ConfigData.versionCode
         versionName ConfigData.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -38,8 +36,6 @@ dependencies {
     implementation Dependencies.Deps.kotlinKtx
     implementation Dependencies.Deps.appCompat
     implementation Dependencies.Deps.materialDesign
-    implementation Dependencies.Deps.constraintLayout
-
 
     //Testing
     testImplementation Dependencies.Deps.junit
