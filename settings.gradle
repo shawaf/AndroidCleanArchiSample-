@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidCleanArchSample"
 include ':app'
+include ':Networking'
+include ':core'

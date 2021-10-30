@@ -1,22 +1,20 @@
-
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-
 }
 
 android {
     compileSdk ConfigData.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.elshawaf.androidcleanarchsample"
         minSdk ConfigData.minSdkVersion
         targetSdk ConfigData.targetSdkVersion
         versionCode ConfigData.versionCode
         versionName ConfigData.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -39,7 +37,10 @@ dependencies {
     implementation Dependencies.kotlinKtx
     implementation Dependencies.appCompat
     implementation Dependencies.materialDesign
-    implementation Dependencies.constraintLayout
+
+    //DI
+    implementation Dependencies.daggerHilt
+    kapt Dependencies.daggerHiltCompiler
 
 
     //Testing
