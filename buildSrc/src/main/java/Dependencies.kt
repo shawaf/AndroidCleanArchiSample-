@@ -4,7 +4,7 @@ object Dependencies {
      */
     const val androidBuildGradle = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-
+    const val daggerHiltPlugin="com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltPlugin}"
 
     /**
      * To define dependencies
@@ -12,7 +12,6 @@ object Dependencies {
 
     val kotlinKtx = "androidx.core:core-ktx:${Versions.kotlinKtx}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-    val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     val materialDesign = "com.google.android.material:material:${Versions.material}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
@@ -41,6 +40,20 @@ object Dependencies {
     val junit = "junit:junit:${Versions.jUnit}"
     val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    /**
+     * Utilities
+     */
+    val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    val json_serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
+
+    /**
+     * Room
+     */
+    val roomRuntime= "androidx.room:room-runtime:${Versions.room_version}"
+    val roomKtx ="androidx.room:room-ktx:${Versions.room_version}"
+    val roomCompiler= "androidx.room:room-compiler:${Versions.room_version}"
+
 
 }
 

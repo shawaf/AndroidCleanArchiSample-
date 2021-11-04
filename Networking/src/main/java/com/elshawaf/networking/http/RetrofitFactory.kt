@@ -12,11 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RetrofitFactory {
 
-    fun createRetrofit(baseUrl: BaseUrl, okHttpClient: OkHttpClient, moshi: Gson): Retrofit {
+    fun createRetrofit(baseUrl: BaseUrl, okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl.url)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 }

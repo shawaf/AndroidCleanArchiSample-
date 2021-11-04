@@ -27,7 +27,6 @@ object OkHttpClientFactory {
     fun createOkHttpClient(
         isDebug: Boolean,
         sslSocket: SSLSocket?,
-        accessToken: AccessToken
     ): OkHttpClient {
         val timeout = 60L
 
