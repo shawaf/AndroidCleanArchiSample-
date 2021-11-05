@@ -1,13 +1,11 @@
 package com.elshawaf.androidcleanarchsample.data.cache.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.elshawaf.androidcleanarchsample.data.cache.db.DBConst
 import com.elshawaf.androidcleanarchsample.data.cache.entities.PostEntity
-import com.elshawaf.androidcleanarchsample.data.model.PostModel
 import kotlinx.coroutines.flow.Flow
 
 @Dao

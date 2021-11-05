@@ -83,6 +83,8 @@ dependencies {
     //DI
     implementation Dependencies.daggerHilt
     kapt Dependencies.daggerHiltCompiler
+    implementation Dependencies.lifecycle_hilt_viewmodel
+    implementation Dependencies.lifecycle_livedata
 
     //Utils
     implementation Dependencies.timber

@@ -1,4 +1,4 @@
-package com.elshawaf.androidcleanarchsample.data.model
+package com.elshawaf.androidcleanarchsample.domain.model
 
 import kotlinx.serialization.Serializable
 

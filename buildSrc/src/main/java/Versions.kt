@@ -14,6 +14,7 @@ object Versions {
     //DI
     const val hilt="2.38.1"
     const val hilt_x="1.0.0-alpha03"
+    const val lifecycle="2.4.0"
     //Networking
     const val retrofit = "2.9.0"
     const val moshi = "1.11.0"

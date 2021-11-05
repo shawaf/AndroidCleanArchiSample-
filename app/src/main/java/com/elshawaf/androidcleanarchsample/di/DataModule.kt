@@ -7,7 +7,7 @@ import com.elshawaf.androidcleanarchsample.data.cache.db.AppDatabase
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteApiServices
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteDataSource
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteDataSourceImp
-import com.elshawaf.androidcleanarchsample.data.repository.MainRepository
+import com.elshawaf.androidcleanarchsample.data.repository.MainRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,6 +42,6 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideMainRepository(localDataSource: LocalDataSource,remoteDataSource: RemoteDataSource) = MainRepository(remoteDataSource,localDataSource)
+    fun provideMainRepository(localDataSource: LocalDataSource,remoteDataSource: RemoteDataSource) = MainRepositoryImp(remoteDataSource,localDataSource)
 
 }

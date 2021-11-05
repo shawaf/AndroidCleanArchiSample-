@@ -22,8 +22,13 @@ object Dependencies {
     const val daggerHilt="com.google.dagger:hilt-android:${Versions.hilt}"
     const val daggerHiltCompiler="com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     const val daggerHiltAndXCompiler="androidx.hilt:hilt-compiler:${Versions.hilt_x}"
-    const val lifecycle_hilt_viewmodel="androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_x}"
 
+    /**
+     * LifeCycle
+     */
+    const val lifecycle_hilt_viewmodel="androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hilt_x}"
+    const val lifecycle_viewmodel="androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
+    const val lifecycle_livedata="androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
     /**
      * Networking
      */

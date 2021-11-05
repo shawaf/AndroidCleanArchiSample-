@@ -4,18 +4,21 @@ import com.elshawaf.androidcleanarchsample.data.cache.LocalDataSource
 import com.elshawaf.androidcleanarchsample.data.cache.entities.mapper.CacheMapper
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteDataSource
 import com.elshawaf.androidcleanarchsample.data.util.networkBoundResource
+import com.elshawaf.androidcleanarchsample.domain.model.mapper.DomainMapper
+import com.elshawaf.androidcleanarchsample.domain.repository.MainRepository
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(
+class MainRepositoryImp @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
-) {
+):MainRepository {
 
 
-    fun getAuthorsList() = networkBoundResource(
+    override fun getAuthorsList() = networkBoundResource(
         query = {
-            localDataSource.getAllAuthors()
+            localDataSource.getAllAuthors().map { list -> DomainMapper.toAuthorDomailList(list) }
         },
         fetch = {
             delay(2000)
@@ -27,9 +30,9 @@ class MainRepository @Inject constructor(
     )
 
 
-    fun getAuthorPosts(authorId:String) = networkBoundResource(
+    override fun getAuthorPosts(authorId:String) = networkBoundResource(
         query = {
-            localDataSource.getAuthorsPosts(authorId)
+            localDataSource.getAuthorsPosts(authorId).map { list -> DomainMapper.toPostDomailList(list) }
         },
         fetch = {
             delay(2000)
@@ -41,9 +44,9 @@ class MainRepository @Inject constructor(
     )
 
 
-    fun getPostComments(postID:String) = networkBoundResource(
+    override fun getPostComments(postID:String) = networkBoundResource(
         query = {
-            localDataSource.getPostComments(postID)
+            localDataSource.getPostComments(postID).map { list -> DomainMapper.toCommentDomailList(list) }
         },
         fetch = {
             delay(2000)
