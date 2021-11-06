@@ -25,6 +25,7 @@ object Versions {
     //Utils
     const val timber = "4.7.1"
     const val serialization="1.3.0"
+    const val glide="4.11.0"
 
 
 }

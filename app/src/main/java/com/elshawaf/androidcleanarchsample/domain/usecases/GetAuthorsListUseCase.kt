@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.elshawaf.androidcleanarchsample.domain.repository.MainRepository
 import javax.inject.Inject
 
-class GetAuthorsListUseCase @Inject constructor(val mainRepository: MainRepository):ViewModel() {
+class GetAuthorsListUseCase @Inject constructor(val mainRepository: MainRepository) {
 
     fun getAuthorsList() = mainRepository.getAuthorsList()
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidCleanArchSample</string>
+
+    <string name="no_internet">No Internet Connection</string>
+    <string name="error_loading_data">Error Loading Data .</string>
+    <string name="fetch_from_remote">Fetching Data From Remote Source . </string>
 </resources>

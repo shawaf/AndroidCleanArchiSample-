@@ -10,7 +10,7 @@ abstract class BaseDataSource {
             val response = call()
             if (response.isSuccessful) {
                 val body = response.body()
-                if (body != null) return Resource.success(body)
+                if (body != null) return Resource.Success(body)
             }
             return error(" ${response.code()} ${response.message()}")
         } catch (e: Exception) {
@@ -20,6 +20,6 @@ abstract class BaseDataSource {
 
     private fun <T> error(message: String): Resource<T> {
         Timber.d(message)
-        return Resource.error("Network call has failed for a following reason: $message",null)
+        return Resource.Error(Throwable("Network call has failed for a following reason: $message",null))
     }
 }

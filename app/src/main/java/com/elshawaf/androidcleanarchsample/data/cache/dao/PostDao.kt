@@ -11,8 +11,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PostDao {
 
-    @Query("SELECT * FROM ${DBConst.PostsTableName}")
-    fun getAllPosts() : Flow<List<PostEntity>>
+    @Query("SELECT * FROM ${DBConst.PostsTableName} WHERE authorId = :id")
+    fun getAllPosts(id: Int) : Flow<List<PostEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(posts: List<PostEntity>)
@@ -23,6 +23,6 @@ interface PostDao {
     @Query("DELETE FROM ${DBConst.PostsTableName} WHERE id = :id")
     suspend fun delete(id: Int)
 
-    @Query("DELETE FROM ${DBConst.AuthorsTableName}")
+    @Query("DELETE FROM ${DBConst.PostsTableName}")
     suspend fun deleteAllPosts()
 }

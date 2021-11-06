@@ -1,9 +1,10 @@
 package com.elshawaf.androidcleanarchsample.domain.model
 
-import kotlinx.serialization.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 
-@Serializable
+@Parcelize
 data class PostModel(
 	val date: String? = null,
 	val imageUrl: String? = null,
@@ -11,5 +12,5 @@ data class PostModel(
 	val title: String? = null,
 	val body: String? = null,
 	val authorId: Int? = null
-)
+):Parcelable
 

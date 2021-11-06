@@ -8,6 +8,10 @@ import com.elshawaf.androidcleanarchsample.data.remote.RemoteApiServices
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteDataSource
 import com.elshawaf.androidcleanarchsample.data.remote.RemoteDataSourceImp
 import com.elshawaf.androidcleanarchsample.data.repository.MainRepositoryImp
+import com.elshawaf.androidcleanarchsample.domain.repository.MainRepository
+import com.elshawaf.androidcleanarchsample.domain.usecases.GetAuthorPostsListUseCase
+import com.elshawaf.androidcleanarchsample.domain.usecases.GetAuthorsListUseCase
+import com.elshawaf.androidcleanarchsample.domain.usecases.GetPostCommentsListUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,10 +42,21 @@ object DataModule {
     @Provides
     fun provideLocaleDataSource(appDatabase: AppDatabase): LocalDataSource = LocaleDataSourceImp(appDatabase)
 
-
+    @Singleton
+    @Provides
+    fun provideMainRepository(localDataSource: LocalDataSource,remoteDataSource: RemoteDataSource):MainRepository = MainRepositoryImp(remoteDataSource,localDataSource)
 
     @Singleton
     @Provides
-    fun provideMainRepository(localDataSource: LocalDataSource,remoteDataSource: RemoteDataSource) = MainRepositoryImp(remoteDataSource,localDataSource)
+    fun provideGetAuthorsListUseCase(mainRepository: MainRepository) = GetAuthorsListUseCase(mainRepository)
+
+    @Singleton
+    @Provides
+    fun provideGetAuthorsPostsListUseCase(mainRepository: MainRepository) = GetAuthorPostsListUseCase(mainRepository)
+
+    @Singleton
+    @Provides
+    fun provideGetPostCommentsListUseCase(mainRepository: MainRepository) = GetPostCommentsListUseCase(mainRepository)
+
 
 }

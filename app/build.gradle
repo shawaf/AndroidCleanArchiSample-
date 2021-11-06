@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-android-extensions'
+
 
 }
 
@@ -19,6 +21,13 @@ android {
         flavorDimensions "default"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -67,11 +76,14 @@ dependencies {
     implementation Dependencies.appCompat
     implementation Dependencies.materialDesign
     implementation Dependencies.constraintLayout
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
 
     //Room
     implementation Dependencies.roomRuntime
     implementation Dependencies.roomKtx
+
     kapt Dependencies.roomCompiler
 
     //Networking
@@ -89,6 +101,7 @@ dependencies {
     //Utils
     implementation Dependencies.timber
     implementation Dependencies.json_serialization
+    implementation Dependencies.glide
 
 
 

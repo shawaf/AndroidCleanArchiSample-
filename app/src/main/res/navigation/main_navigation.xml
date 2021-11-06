@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/authorsListFramgnet">
+
+    <fragment
+        android:id="@+id/authorsListFramgnet"
+        android:name="com.elshawaf.androidcleanarchsample.presentation.authors_list.AuthorsListFramgnet"
+        android:label="AuthorsListFramgnet" >
+        <action
+            android:id="@+id/action_authorsListFramgnet_to_authorPostsListFramgnet"
+            app:destination="@id/authorPostsListFramgnet"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/authorPostsListFramgnet"
+        android:name="com.elshawaf.androidcleanarchsample.presentation.authors_posts_list.AuthorPostsListFramgnet"
+        android:label="AuthorPostsListFramgnet" >
+        <action
+            android:id="@+id/action_authorPostsListFramgnet_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.elshawaf.androidcleanarchsample.presentation.post_details.PostDetailsFragment"
+        android:label="PostDetailsFragment" />
+</navigation>

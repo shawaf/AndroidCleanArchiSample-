@@ -28,7 +28,7 @@ class LocaleDataSourceImp @Inject constructor(
     /**
      * Posts Database Operations
      */
-    override fun getAuthorsPosts(authorID: String) = appDatabase.postDao().getAllPosts()
+    override fun getAuthorsPosts(authorID: String) = appDatabase.postDao().getAllPosts(authorID.toInt())
 
     override suspend fun insertPostsList(postsEntityList: List<PostEntity>) {
         appDatabase.withTransaction {

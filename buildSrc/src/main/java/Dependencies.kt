@@ -51,6 +51,7 @@ object Dependencies {
      */
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     val json_serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
+    val glide="com.github.bumptech.glide:glide:${Versions.glide}"
 
     /**
      * Room
