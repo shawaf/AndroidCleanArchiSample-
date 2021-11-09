@@ -17,6 +17,7 @@ I have to defined a set of tools to use to start this project with but i will ke
 ### Coming : 
 - Jetpack Compose 
 - State/Shared Flow 
+- Paging 3 
 - Unit / UI Tests
 
 
